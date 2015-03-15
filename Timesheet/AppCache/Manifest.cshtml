@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAppCache.cshtml";
+    Response.ContentType = "text/cache-manifest";
+    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    Response.Cache.SetExpires(DateTime.MinValue);
+    Response.Cache.SetValidUntilExpires(false);
+    Response.Charset = System.Text.Encoding.UTF8.WebName;
+}
+#Version: @ViewBag.Version
+
+CACHE:
+@for (var i = 0; i < @ViewBag.Refs.Count; i++)
+{
+    @Html.Raw(@ViewBag.Refs[i] + "\r\n");
+}
+../App/Login
+../App/Forgot
+../App/Register
+../App/SetPassword
+../App/ResetPassword  
+../App/Dashboard  
+../App/Diary
+../App/Questions
+../App/Settings
+../App/Profile
+../App/ProfileEdit
+../App/Help
+../App/Eula
+../App/PrivacyStatement
+../App/Print
+../App/Printable
+../App/Reward
+../App/FlyingDoc
+../Tutorial/Page1Welcome
+../Tutorial/Page248hours
+../Tutorial/Page3Time
+../Tutorial/Page4Drinks
+../Tutorial/Page5Slider
+../Tutorial/Page6Settings
+../Tutorial/Page7Questionnaires
+../Tutorial/Page8Reward
+../Tutorial/Page9Help 
+../login.html

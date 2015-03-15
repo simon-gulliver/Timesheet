@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Timesheet";
+}
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;
+    }
+}
+<div id="main">
+    <header class="container">
+
+        <div class="navbar-header navbar-left pull-left">
+            <div id="logo" class="nav navbar-nav navbar-left pull-left">
+                <h2 class="mostofwidth">Timesheet</h2>
+            </div>
+        </div>
+        <ui class="nav navbar-nav navbar-right pull-right">
+            <li class="nav"><img id="offline" class="img-responsive" src="../../Images/offline.png" /></li>
+        </ui>
+    </header>
+
+    <main class="container drop">
+        <div id="page0" class="col-md-6">
+            <section id="frm">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-inline" id="username" placeholder="Enter your Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form-control-inline" id="password" placeholder="Enter your Password">
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                </form>
+            </section>
+        </div>
+
+        <div id="page1" class="col-md-6" style="display:none">
+                @*<div class="input-group date">
+        <input type="text" class=" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+    </div>*@
+                
+                @*<span id="theme_selector" class="dropdown">
+                    <select id ="activities"/> 
+                </span>*@
+                <input type="text" class="date datewidth">
+                <span class="row clearfix">
+                    <select id="activities"></select>
+                </span>
+                <table id="schedule" class="table-responsive  table-bordered timetable noselect">
+                        <thead>
+                        <th>Hour</th>
+                        <th>00</th>
+                        <th>15</th>
+                        <th>30</th>
+                        <th>45</th>
+                        </thead>
+                        <tr><td>00</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>01</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>02</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>03</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>04</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>05</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>06</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>07</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>08</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>09</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>10</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>11</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>12</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>13</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>14</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>15</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>16</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>17</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>18</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>19</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>20</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>21</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>22</td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>23</td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+        </div>
+    </main>
+</div>
+
